@@ -13,9 +13,13 @@ struct InfoView: View {
     var body: some View {
         VStack {
             List{
-                Image(systemName: "person.fill")
-                    .resizable()
-                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                HStack {
+                    Spacer()
+                    Image(systemName: "person.fill")
+                        .resizable()
+                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                    Spacer()
+                }
                 HStack {
                     Image(systemName: "phone")
                         .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
@@ -27,7 +31,7 @@ struct InfoView: View {
                     Text(contact.email)
                 }
             }
-            .listStyle(SidebarListStyle())
+            .listStyle(GroupedListStyle())
             .navigationTitle(contact.fullName)
         }
     }
